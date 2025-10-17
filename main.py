@@ -25,9 +25,9 @@ def root():
 @app.get("/me")
 def get_profile(response: Response):
     response.headers["Content-Type"] = "application/json"
-    user.email = os.getenv("MY_EMAIL")
-    user.name = os.getenv("MY_NAME")
-    user.stack = os.getenv("MY_STACK")
+    email = os.getenv("MY_EMAIL")
+    name = os.getenv("MY_NAME")
+    stack = os.getenv("MY_STACK")
 
     # Current UTC timestamp
     timestamp = datetime.now(timezone.utc).isoformat()
